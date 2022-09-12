@@ -15,6 +15,15 @@ Visual Studio 2019 or higher
 Node js
 Angular Cli @latest
 ```
+## run app
+_to start the application locally_
+
+```
+Running the FastFoot.Api project 
+Run FastFood.Web project with the command npm run start from the root of the project 
+Open the browser at https://localhost:4200/
+```
+
 
 ## Images 
 
