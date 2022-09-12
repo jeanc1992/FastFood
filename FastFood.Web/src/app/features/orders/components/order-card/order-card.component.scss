@@ -1,0 +1,44 @@
+.order-card{
+    margin-top: 20px;
+    background-color: white;
+    width: 450px;
+    height: 300px;
+    .o-head{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 10px 0 10px;
+        .order-number{
+            font-size: 20px;
+        }
+        .status{
+            color: white;
+            padding:5px 10px;
+            &.s-1{
+                background-color: #F8C304;
+            }
+            &.s-2{
+                background-color: #FF329D;
+            }
+            &.s-3{
+                background-color: #340763;
+            }
+            &.s-4{
+                background-color: #6c117b;
+            }
+            &.s-5{
+                background-color: #0182B0;
+            }
+        }
+    }
+    .o-body{
+        height:215px;
+        display: flex;
+        padding: 0 10px 10px 10px;
+        justify-content: space-between;
+        .button-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+}

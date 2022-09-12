@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <h1>Products</h1>
+    <p>product management.</p>    
+    <div class="">
+        <button class="btn btn-outline-success float-end" (click)="openModalProduct()">
+            Add product
+        </button>
+    </div>
+    <table class="table" *ngIf="products">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Product Code</th>
+                <th>Stock</th>
+                <th>CreatedAt</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of products">
+                <td>{{ item.name}}</td>
+                <td>{{ item.description}}</td>
+                <td>{{ item.productCode}}</td>
+                <td>{{ item.stock}}</td>
+                <td>{{ item.createdAt | date}}</td>
+                <td>
+                    <button class="btn" title="edit" (click)="openModalProduct(item)">
+                        <i class="bi bi-pen"></i>
+                    </button>
+                    <swal
+                        #deleteSwal
+                        title="Remove product {{item.name}}?"
+                        text="This cannot be undone"
+                        icon="question"
+                        [showCancelButton]="true"
+                        [focusCancel]="true"
+                        (confirm)="removeProduct(item)">
+                        </swal>
+                    <button class="btn" title="remove" [swal]="deleteSwal">
+                        <i class="bi bi-trash3"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,27 @@
+
+<div class="modal-body">
+    <h3>{{ isUpdate ? 'Update product': 'Create Product' }}</h3>
+    <form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+      <div class="mb-3">
+        <input class="form-control" type="text" formControlName="name" placeholder="Name">
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" formControlName="description" placeholder="Description"></textarea>
+      </div>
+      
+      <div class="mb-3 row">
+        <div class="col-md-6">
+          <input class="form-control" type="text" formControlName="productCode" placeholder="Code">
+        </div>
+        <div class="col-md-6">
+          <input class="form-control" type="text" formControlName="stock" placeholder="Stock">
+        </div>
+      </div>
+      <div class="mb-3 float-end button-group">
+        <button [disabled]="form.invalid" type="submit" class="btn btn-outline-success me-2">{{ isUpdate ? 'update': 'save' }}</button> 
+       <button type="button" class="btn btn-outline-primary" (click)="modalRef.hide()">cancel</button>
+      </div>
+   
+    </form>
+
+  </div>

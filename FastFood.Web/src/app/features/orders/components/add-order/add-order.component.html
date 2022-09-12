@@ -1,0 +1,40 @@
+
+<div class="modal-body">
+
+    <h3>{{ 'Create Order' }}</h3>
+    <form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+        <div class="mb-3">
+            <textarea class="form-control" formControlName="description" placeholder="Description"></textarea>
+          </div>
+           <h4>Products</h4>
+           <div formArrayName="products">
+            <div class="row mb-3" *ngFor="let order of orderProduct.controls;let i = index" [formGroupName]="i">
+                    <div class="col-md-7">
+                        
+                        <select formControlName="productId"  title="select" class="form-control"  required>
+                            <option *ngFor="let item of products" [value]="item.id">
+                               {{item.name}} ({{ item.stock }})
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <input placeholder="quantity" class="form-control" type="number"  formControlName="quantity" required>
+                    </div>
+                    <div class="col">
+                        <button type="button" title="remove" class="btn" (click)="removeproduct(i)" *ngIf="i < orderProduct.controls.length - 1">
+                            <i class="bi bi-x-circle"></i>
+                        </button>
+                        <button type="button" title="add" class="btn" [disabled]="order.invalid" (click)="addProduct()" *ngIf="i == orderProduct.controls.length - 1">
+                            <i class="bi bi-plus-circle"></i>
+                        </button>
+            
+                    </div>
+                </div>
+           </div>
+         
+          <div class="mb-3 float-end button-group">
+            <button  type="submit" [disabled]="form.invalid" class="btn btn-outline-success me-2">{{'save' }}</button> 
+           <button type="button" class="btn btn-outline-primary" (click)="modalRef.hide()">cancel</button>
+          </div>
+    </form>
+  </div>

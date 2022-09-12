@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FastFood.Api</name>
+    </assembly>
+    <members>
+        <member name="M:FastFood.Api.Controllers.OrderController.CreateAsync(FastFood.Domain.Dto.Orders.Request.OrderRequestDto)">
+            <summary>
+            Create new Order
+            </summary>
+            <param name="dto"></param>
+            <response code="200">Returns the order created.</response>
+            <response code="404">If the order does not exist</response>
+            <returns>the created order</returns>
+        </member>
+        <member name="M:FastFood.Api.Controllers.OrderController.GetAllOrders(System.Nullable{FastFood.Domain.Enums.OrderStatusType})">
+            <summary>
+            Get all orders
+            </summary>
+            <response code="200">Returns the all orders</response>
+            <response code="404">If the order does not exist</response>
+            <returns>the all orders</returns>
+        </member>
+        <member name="M:FastFood.Api.Controllers.OrderController.ChangeStatus(System.Int64,FastFood.Domain.Enums.OrderStatusType)">
+            <summary>
+            Change status order
+            </summary>
+            <param name="id"></param>
+            <param name="statusType"></param>
+            <response code="200">Returns the update order</response>
+            <response code="404">If the order does not exist</response>
+            <returns></returns>
+        </member>
+        <member name="M:FastFood.Api.Controllers.ProductsController.CreateAsync(FastFood.Domain.Dto.Products.Request.ProductRequestDto)">
+            <summary>
+            Create new Product
+            </summary>
+            <param name="dto"></param>
+            <response code="200">Returns the product created</response>
+            <response code="404">If the product does not exist</response>
+            <returns>the create product</returns>
+        </member>
+        <member name="M:FastFood.Api.Controllers.ProductsController.GetProductAsync(System.Int64)">
+            <summary>
+            Get product by Id
+            </summary>
+            <param name="id"></param>
+            <response code="200">Returns the requested product</response>
+            <response code="404">If the product does not exist</response>
+            <returns>The request product</returns>
+        </member>
+        <member name="M:FastFood.Api.Controllers.ProductsController.GetAllProducts">
+            <summary>
+            Gets all the products by using the provided filter
+            </summary>
+            <response code="200">Returns a wrapper that contains a list of products</response>
+            <response code="400">If some of the properties in the request are not valid</response>
+            <returns>A wrapper that contains a list of all the products</returns>
+        </member>
+        <member name="M:FastFood.Api.Controllers.ProductsController.UpdateProduct(System.Int64,FastFood.Domain.Dto.Products.Request.ProductRequestDto)">
+            <summary>
+            update product
+            </summary>
+            <param name="id"></param>
+            <param name="dto"></param>
+            <response code="200">Returns the requested product</response>
+            <response code="404">If the product does not exist</response>
+            <returns>The request product</returns>
+        </member>
+        <member name="M:FastFood.Api.Controllers.ProductsController.DeleteProduct(System.Int64)">
+            <summary>
+            delete product
+            </summary>
+            <param name="id"></param>
+            <response code="200">Returns the requested product</response>
+            <response code="404">If the product does not exist</response>
+            <returns>The request product</returns>
+        </member>
+    </members>
+</doc>

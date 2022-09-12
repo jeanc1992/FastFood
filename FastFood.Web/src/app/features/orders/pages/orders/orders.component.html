@@ -1,0 +1,39 @@
+<div class="container mt-5">
+<h3>Orders history</h3>
+<div class="d-flex justify-content-end mb-5">
+    <button class="btn btn-outline-success" (click)="openModaOrder()">
+        Add Order
+    </button>
+</div>
+<div class="mb-5">
+    <p>select the tab to see the status</p>
+    <tabset #staticTabs *ngIf="orders">
+      <tab heading="Pending">
+        <div class="cards-container">
+            <app-order-card [order]="item" [products]="products" (changeStatus)="changeStatusEvent()" *ngFor="let item of getTabOrder(OrderStatusType.Pending)"></app-order-card> 
+         </div>
+      </tab>
+      <tab heading="In Progress">
+        <div class="cards-container">
+            <app-order-card [order]="item" [products]="products" (changeStatus)="changeStatusEvent()" *ngFor="let item of getTabOrder(OrderStatusType.InProgress)"></app-order-card>
+        </div>
+     </tab>
+      <tab heading="Completed">
+        <div class="cards-container">
+            <app-order-card [order]="item" [products]="products" (changeStatus)="changeStatusEvent()" *ngFor="let item of getTabOrder(OrderStatusType.Completed)"></app-order-card>
+        </div>
+      </tab>
+      <tab heading="Delivered">
+        <div class="cards-container">
+            <app-order-card [order]="item" [products]="products" (changeStatus)="changeStatusEvent()" *ngFor="let item of getTabOrder(OrderStatusType.Delivered)"></app-order-card>
+        </div>
+      </tab>
+      <tab heading="Canceled">
+        <div class="cards-container">
+            <app-order-card [order]="item" [products]="products" (changeStatus)="changeStatusEvent()" *ngFor="let item of getTabOrder(OrderStatusType.Canceled)"></app-order-card>
+        </div>
+      </tab>
+    </tabset>
+  </div>
+
+</div>
