@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FastFood.Infraestructure\FastFood.Infrastructure.csproj" />
+	  <InternalsVisibleTo Include="FastFood.Test"/>
   </ItemGroup>
 
 </Project>
